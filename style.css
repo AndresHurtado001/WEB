@@ -1,0 +1,117 @@
+/* Importamos una fuente tipo Terminal */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Para que al bajar sea fluido */
+}
+
+body {
+    background-color: #0a0a0a; /* Fondo casi negro */
+    /* Añadimos un sutil efecto de líneas de monitor antiguo */
+    background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                      linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    color: #15ffd8; /* Verde Matrix/Terminal */
+    font-family: 'Fira Code', monospace;
+    min-height: 200vh; /* Para poder hacer scroll */
+}
+
+/* Contenedor Glassmorphism con toque Retro */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 65, 0.2); /* Borde verde sutil */
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+/* Estilo para los botones */
+.contenedor-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.contenedor-boton a img {
+    width: 50px;
+    transition: all 0.3s ease;
+    filter: grayscale(1) brightness(1.5); /* Hace que los logos parezcan parte del terminal */
+}
+
+.contenedor-boton a img:hover {
+    filter: grayscale(0) brightness(1);
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Nueva sección para el scroll */
+.seccion-contenido {
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h2::before {
+    content: "> "; /* Añade el prompt de terminal automáticamente */
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.audio-container {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+
+.bandcamp-video {
+    position: relative;
+    border: 2px solid rgba(0, 255, 65, 0.4); /* Borde neón */
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); /* Resplandor */
+    border-radius: 8px;
+    overflow: hidden;
+    line-height: 0; /* Quita espacios extra debajo del iframe */
+}
+
+.bandcamp-audio {
+    position: relative;
+    border: 2px solid rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); /* Resplandor */
+    border-radius: 8px;
+    overflow: hidden;
+    line-height: 0; /* Quita espacios extra debajo del iframe */
+
+}
+
+
+/* Ajuste para que el video sea fluido en móviles */
+@media (max-width: 768px) {
+    .bandcamp-video iframe {
+        height: 250px !important;
+    }
+}
